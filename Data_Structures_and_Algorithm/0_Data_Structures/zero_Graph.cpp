@@ -43,6 +43,47 @@ public:
     }
 };
 
+//Weighted Graph
+
+class WeightedGraph {
+
+    int vertices;
+
+    vector<vector<pair<int,int>>> adj;
+
+public:
+
+    WeightedGraph(int v) {
+        vertices = v;
+        adj.resize(v);
+    }
+
+    void addEdge(int u, int v, int weight) {
+
+        adj[u].push_back({v, weight});
+        adj[v].push_back({u, weight});
+    }
+
+    void display() {
+
+        for(int i = 0; i < vertices; i++) {
+
+            cout << i << " -> ";
+
+            for(auto neighbor : adj[i]) {
+
+                cout << "("
+                     << neighbor.first
+                     << ", weight="
+                     << neighbor.second
+                     << ") ";
+            }
+
+            cout << endl;
+        }
+    }
+};
+
 int main() {
 
     Graph g(4);
