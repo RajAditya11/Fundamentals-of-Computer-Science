@@ -14,7 +14,7 @@ bool ternary_Search( vector<int> nums , int key , int l , int r ){
     while( l <= r ){
 
         int leftMid = l + ( r - l )/3;
-        int rightMid = l - ( r - l )/3;
+        int rightMid = r - ( r - l )/3;
 
 
         if( nums[leftMid] == key ){
