@@ -7,7 +7,7 @@ using namespace std;
 bool binary_Search( vector<int> nums , int key , int l , int r ){
     
     while( l <= r ){
-        int mid = l + ( r - l )/2;
+        int mid = l + ( r - l )/2; // safe overflow 
 
         if( nums[mid] == key ){
             return true;
